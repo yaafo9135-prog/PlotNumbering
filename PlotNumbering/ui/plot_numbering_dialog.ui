@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PlotNumberingDialog</class>
+ <widget class="QDialog" name="PlotNumberingDialog">
+  <property name="windowTitle"><string>Plot Numbering</string></property>
+  <property name="minimumSize"><size><width>650</width><height>520</height></size></property>
+  <layout class="QVBoxLayout" name="rootLayout">
+   <property name="spacing"><number>8</number></property>
+   <property name="leftMargin"><number>12</number></property>
+   <property name="topMargin"><number>10</number></property>
+   <property name="rightMargin"><number>12</number></property>
+   <property name="bottomMargin"><number>8</number></property>
+   <item>
+    <widget class="QFrame" name="headerFrame">
+     <property name="frameShape"><enum>QFrame::StyledPanel</enum></property>
+     <layout class="QHBoxLayout" name="headerLayout">
+      <property name="spacing"><number>10</number></property>
+      <property name="leftMargin"><number>10</number></property>
+      <property name="topMargin"><number>8</number></property>
+      <property name="rightMargin"><number>10</number></property>
+      <property name="bottomMargin"><number>8</number></property>
+      <item>
+       <widget class="QLabel" name="logoLabel">
+        <property name="minimumSize"><size><width>78</width><height>68</height></size></property>
+        <property name="maximumSize"><size><width>78</width><height>68</height></size></property>
+        <property name="alignment"><set>Qt::AlignCenter</set></property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="titleLayout">
+        <property name="spacing"><number>2</number></property>
+        <item><widget class="QLabel" name="titleLabel"><property name="text"><string>Plot Numbering</string></property><property name="styleSheet"><string>font-size: 16pt; font-weight: 700;</string></property></widget></item>
+        <item><widget class="QLabel" name="subtitleLabel"><property name="text"><string>Cadastral plot numbering</string></property><property name="styleSheet"><string>font-size: 9pt;</string></property></widget></item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="headerSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer>
+      </item>
+      <item><widget class="QPushButton" name="previewButton"><property name="minimumHeight"><number>30</number></property><property name="text"><string>Preview</string></property><property name="toolTip"><string>Preview numbering without changing the layer.</string></property></widget></item>
+      <item><widget class="QPushButton" name="applyButton"><property name="minimumHeight"><number>30</number></property><property name="text"><string>Apply</string></property><property name="toolTip"><string>Apply the generated plot numbers to the layer.</string></property></widget></item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable"><bool>true</bool></property>
+     <property name="horizontalScrollBarPolicy"><enum>Qt::ScrollBarAlwaysOff</enum></property>
+     <property name="verticalScrollBarPolicy"><enum>Qt::ScrollBarAsNeeded</enum></property>
+     <widget class="QWidget" name="scrollContent">
+      <property name="minimumSize"><size><width>0</width><height>0</height></size></property>
+      <layout class="QVBoxLayout" name="contentLayout">
+       <property name="spacing"><number>8</number></property>
+       <item>
+        <widget class="QGroupBox" name="layerGroup">
+         <property name="title"><string>Layer</string></property>
+         <layout class="QGridLayout">
+          <property name="horizontalSpacing"><number>10</number></property><property name="verticalSpacing"><number>7</number></property>
+          <item row="0" column="0"><widget class="QLabel"><property name="text"><string>Polygon layer</string></property></widget></item>
+          <item row="0" column="1"><widget class="QComboBox" name="layerCombo"/></item>
+          <item row="0" column="2"><widget class="QPushButton" name="refreshButton"><property name="text"><string>Refresh</string></property></widget></item>
+          <item row="1" column="0"><widget class="QLabel"><property name="text"><string>Plot number field</string></property></widget></item>
+          <item row="1" column="1" columnspan="2"><widget class="QComboBox" name="fieldCombo"/></item>
+          <item row="2" column="1" columnspan="2"><widget class="QLabel" name="layerInfoLabel"><property name="text"><string>No polygon layer selected.</string></property></widget></item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="numberGroup">
+         <property name="title"><string>Numbering</string></property>
+         <layout class="QGridLayout">
+          <property name="horizontalSpacing"><number>10</number></property><property name="verticalSpacing"><number>7</number></property>
+          <item row="0" column="0"><widget class="QLabel"><property name="text"><string>Method</string></property></widget></item>
+          <item row="0" column="1" columnspan="3"><widget class="QComboBox" name="orderCombo"><property name="minimumHeight"><number>30</number></property><property name="styleSheet"><string>QComboBox { font-size: 11pt; padding: 6px 10px; } QComboBox QAbstractItemView { font-size: 11pt; padding: 6px; min-height: 34px; }</string></property></widget></item>
+          <item row="1" column="1" columnspan="3"><widget class="QLabel" name="methodHelpLabel"><property name="wordWrap"><bool>true</bool></property><property name="styleSheet"><string>font-size: 9pt;</string></property></widget></item>
+          <item row="2" column="0"><widget class="QLabel"><property name="text"><string>Start</string></property></widget></item>
+          <item row="2" column="1"><widget class="QSpinBox" name="startSpin"/></item>
+          <item row="2" column="2"><widget class="QLabel"><property name="text"><string>Padding</string></property></widget></item>
+          <item row="2" column="3"><widget class="QSpinBox" name="paddingSpin"/></item>
+          <item row="3" column="0"><widget class="QLabel"><property name="text"><string>Prefix</string></property></widget></item>
+          <item row="3" column="1"><widget class="QLineEdit" name="prefixEdit"><property name="placeholderText"><string>Optional</string></property></widget></item>
+          <item row="3" column="2"><widget class="QLabel"><property name="text"><string>Suffix</string></property></widget></item>
+          <item row="3" column="3"><widget class="QLineEdit" name="suffixEdit"><property name="placeholderText"><string>Optional</string></property></widget></item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="interactiveGroup">
+         <property name="title"><string>Start &amp; Direction</string></property>
+         <layout class="QGridLayout">
+          <item row="0" column="0"><widget class="QPushButton" name="pickStartButton"><property name="text"><string>Pick start on map</string></property></widget></item>
+          <item row="0" column="1"><widget class="QLabel" name="startPointLabel"><property name="text"><string>Start: not selected</string></property></widget></item>
+          <item row="0" column="2"><widget class="QLabel"><property name="text"><string>Direction °</string></property></widget></item>
+          <item row="0" column="3"><widget class="QSpinBox" name="directionSpin"/></item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="blockGroup">
+         <property name="title"><string>Blocks</string></property>
+         <layout class="QGridLayout">
+          <item row="0" column="0" columnspan="3"><widget class="QCheckBox" name="blockCheck"><property name="text"><string>Use a block/section field</string></property></widget></item>
+          <item row="1" column="0"><widget class="QLabel"><property name="text"><string>Block field</string></property></widget></item>
+          <item row="1" column="1" columnspan="2"><widget class="QComboBox" name="blockFieldCombo"/></item>
+          <item row="2" column="0"><widget class="QLabel"><property name="text"><string>Separator</string></property></widget></item>
+          <item row="2" column="1"><widget class="QLineEdit" name="blockSeparatorEdit"><property name="text"><string>-</string></property></widget></item>
+          <item row="2" column="2"><widget class="QLabel"><property name="text"><string>Block padding</string></property></widget></item>
+          <item row="2" column="3"><widget class="QSpinBox" name="blockPaddingSpin"/></item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="optionsGroup">
+         <property name="title"><string>Options</string></property>
+         <layout class="QVBoxLayout">
+          <item><widget class="QCheckBox" name="selectionCheck"><property name="text"><string>Number selected polygons only</string></property></widget></item>
+          <item><widget class="QLabel" name="selectionInfoLabel"><property name="text"><string>All polygons will be numbered.</string></property></widget></item>
+          <item><widget class="QCheckBox" name="skipExistingCheck"><property name="text"><string>Skip numbers already in use</string></property></widget></item>
+          <item><widget class="QCheckBox" name="continueExistingCheck"><property name="text"><string>Continue after the highest existing number</string></property></widget></item>
+          <item><widget class="QCheckBox" name="labelCheck"><property name="text"><string>Enable plot labels</string></property><property name="checked"><bool>true</bool></property></widget></item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="previewGroup">
+         <property name="title"><string>Preview</string></property>
+         <layout class="QVBoxLayout">
+          <item><widget class="QPlainTextEdit" name="previewText"><property name="readOnly"><bool>true</bool></property><property name="minimumHeight"><number>180</number></property></widget></item>
+          <item><widget class="QLabel" name="statusLabel"><property name="text"><string>Ready.</string></property><property name="wordWrap"><bool>true</bool></property><property name="styleSheet"><string>font-weight: 600;</string></property></widget></item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
