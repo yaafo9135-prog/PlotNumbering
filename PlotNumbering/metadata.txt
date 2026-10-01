@@ -1,0 +1,18 @@
+[general]
+name=Plot Numbering
+qgisMinimumVersion=3.22
+qgisMaximumVersion=4.99
+description=Professional cadastral plot numbering with directional, grid, and block-based ordering.
+version=1.0
+author=Hamadu Hudu Yaafo
+email=yaafo9135@gmail.com
+category=Vector
+icon=icon.png
+experimental=False
+deprecated=False
+tags=plot numbering,cadastral,parcel numbering,land subdivision,polygon numbering,grid numbering,block numbering,land administration,surveying
+about=Plot Numbering is a QGIS plugin for assigning sequential numbers to polygon plots in cadastral, subdivision, surveying, and land-administration workflows. It provides directional ordering, grid ordering, interactive starting numbers, block-field support, and Automatic Block/Grid ordering for layouts with different block orientations. The numbering logic supports short-side-first progression and continuous numbering between adjacent blocks. The plugin provides a compact, resizable interface and is designed for compatibility with QGIS 3 and QGIS 4.
+homepage=https://github.com/yaafo9135-Prog/PlotNumbering
+repository=https://github.com/yaafo9135-Prog/PlotNumbering
+tracker=https://github.com/yaafo9135-Prog/PlotNumbering/issues
+changelog=2026-09-30 — Version 1.0: initial public release.
